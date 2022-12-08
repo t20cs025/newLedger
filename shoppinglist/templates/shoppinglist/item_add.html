@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} Add {% endblock %}
+{% block page_name %}追加{% endblock %}
+{% block main %}
+<form action="{% url 'shoppinglist:add' %}" method="post">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+<input type="submit"/>
+</form>
+{% endblock %}
