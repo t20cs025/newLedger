@@ -40,6 +40,7 @@ class Ledger(models.Model):
     approval_date = models.DateField('承認日時', blank=True,null=True)
     image_url = models.URLField('画像url', brank=True, null=True)
     
+    
     class Meta:
         db_table = '帳簿表'
     
