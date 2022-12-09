@@ -20,14 +20,12 @@ class Ledger(models.Model):
     userID = models.ForeignKey(User, blank=True, null=True, verbose_name='user', on_delete=models.PROTECT)
     attachedField = models.charField('属性', max_length=100)   #5パターンのいずれかに変更すべし
     
-    
     IS_USED_CHOICES = (
         (False, '請求書'),
         (True, '領収書'),
     )
     #請求書、領収書の種別
     category = models.BooleanField('種別', choices=IS_USED_CHOICES, help_text='請求書ならfalse')
-    
     
     input_date = models.DateField('日付', blank=True,null=True)
     client = models.CharField('相手先', max_length=100)#全角文字指定に変更すべし
@@ -58,7 +56,7 @@ class RelatedDocument(models.Model):
     def __str__(self):
         return self.relatedFileID
 
-'''
+
 class Shop(models.Model):
     name = models.CharField(max_length=100)
     shop_site= models.URLField(blank=True,null=True)
@@ -77,4 +75,3 @@ class Item(models.Model):
     def __str__(self):
         return '{} ({})'.format(self.name, self.buy_date)
     
-'''
