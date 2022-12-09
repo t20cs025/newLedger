@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ItemList, ItemEditView,ItemShowView,ItemDeleteView,ItemAddView,ItemMainView,LoginView,SignUpView
+from .views import ItemList, ItemEditView,ItemShowView,ItemDeleteView,ItemAddView,ItemMainView,LoginView,SignUpView,RegisterView
 
 
 app_name = 'shoppinglist'
@@ -14,4 +14,5 @@ urlpatterns = [
     path('main',ItemMainView.as_view(),name='main'),
     path('login',LoginView.as_view(),name='login'),
     path('signup',SignUpView.as_view(),name='signup'),
+    path('register',RegisterView.as_view(),name='register'),
     ]
