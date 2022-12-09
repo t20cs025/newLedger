@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} 個別リスト {% endblock %}
+
+{% block main %}
+<form action="{% url 'shoppinglist:register' %}" method="post">
+{% csrf_token %}
+{{ form_id }}
+<input type="submit"/>
+</form>
+
+   <div id="login">
+     <form>
+     <table>
+        <tr>
+        <th><label>種別</label</th>
+        <td><input type="radio" value="領収書" name="領収書"><input type="radio" value="レシート" name="レシート"></td>
+        </tr>
+     </table>
+       <p>種別<input type="radio" value="領収書"> 領収書
+       <input type="radio" value="レシート"> レシート</p> 
+       <p>日付<input type="date" placeholder="例）2000-11-11"</p>
+       <p>相手先<input type="text" placeholder="例）〇〇株式会社"></p>  
+       <p>金額<input type="integer">円</p> 
+       <p>備考<textarea name="comment"></textarea></p> 
+     
+     </form>
+   </div>
+<ul>
+<li><a href="{% url 'shoppinglist:main' %}"><input type="button" value="登録"></a></li>
+<li><a href="{% url 'shoppinglist:show' %}"><input type="button" value="キャンセル"></a></li>
+</ul>
+{% endblock %}

@@ -104,3 +104,9 @@ class LoginView(TemplateView):
 
 class SignUpView(TemplateView):
     template_name ='shoppinglist/signup.html'
+    
+class RegisterView(CreateView):
+    model = Item
+    fields = ('name', 'item_url', 'count', 'buy_date', 'shop')
+    template_name = 'shoppinglist/register.html'
+    success_url = 'main/'    

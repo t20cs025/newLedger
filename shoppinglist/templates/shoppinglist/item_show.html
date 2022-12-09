@@ -18,8 +18,8 @@
 <dt>店</dt><dd>{{ item.shop }}</dd>
 </dl>
 {% endif %}
-
 <ul>
-<li><a href="{% url 'shoppinglist:main' %}"><input type="button" value="一覧へ戻る"></a></li>
+<li><a href="{% url 'shoppinglist:register' %}"><input type="button" value="アップロード"></a></li>
+<li><a href="{% url 'shoppinglist:main' %}"><input type="button" value="キャンセル"></a></li>
 </ul>
 {% endblock %}
