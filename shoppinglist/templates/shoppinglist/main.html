@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% block css %}{% static '/css/main.css'%}{% endblock %}
+{% load static %}
+
+    {% block css %}<link rel="stylesheet"href="{% static '/css/main.css'%}">{% endblock %}
 {% block title %} Add {% endblock %}
 {% block page_name %}メイン画面{% endblock %}
 {% block main %}
@@ -10,10 +12,12 @@
          <td class="upload">
              <div class="tooltip5" style="text-align: center;">    
              <div style="text-align: center;">
-                 <img src="./images/common/database.png"  alt="登録アイコン">
+                <a href="{% url 'shoppinglist:show' %}">
+                 <img src={% static "/images/common/database.png"%}  alt="登録アイコン">
                  <p class="subtitle" >
                      帳簿の登録
                  </p>
+                </a>
              </div>
              <div class="description5">説明を入力</div>                   
              </div>
@@ -22,19 +26,23 @@
          <td class="span"></td>
          <td class="upload">
              <div style="text-align: center;">
-                 <img src="./images/common/admin.png"  alt="承認アイコン">
+                <a href="{% url 'shoppinglist:add' %}">
+                 <img src={% static "/images/common/admin.png"%}  alt="承認アイコン">
                  <p class="subtitle" >
                      帳簿の承認
                  </p>
+                </a>
              </div>                    
          </td>
          <td class="span"></td>
          <td class="upload">
              <div style="text-align: center;">
-                 <img src="./images/common/search.png"  alt="検索アイコン">
+                <a href="{% url 'shoppinglist:add' %}">
+                 <img src={% static "/images/common/search.png"%}  alt="検索アイコン">
                  <p class="subtitle" >
                      帳簿の検索
                  </p>
+                </a>
              </div>
              
          </td>

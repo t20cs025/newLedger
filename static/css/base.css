@@ -1,5 +1,3 @@
-common.css
-
 @charset "utf-8";
 
 *,
@@ -42,6 +40,8 @@ header {
     height: 10px;
 }
 .header-table {
+    border-collapse: collapse;
+    width: 100vw;
     background-color: #3a9dcf;
     height: 100px;
     table-layout: fixed;
@@ -96,14 +96,10 @@ footer {
 
 }
 table {
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     width: 100vw;
     table-layout: fixed;
     text-align: center;
-}
-
-th, td {
-    /* border:1px solid #333 */
 }
 
 .buttons {
@@ -111,9 +107,8 @@ th, td {
     width: 100vw;
     table-layout: fixed;
     text-align: center;
-}
-td.buttons {
-    border: 1px solid #333;
+    border:#0a458a
+    
 }
 
 .room {
@@ -128,8 +123,4 @@ width: 20px;
 .string {
     font-size: 25px;
     font-weight: bold;
-}
-
-.container {
-    height: 30px;
 }

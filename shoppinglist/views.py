@@ -95,3 +95,12 @@ class ItemDeleteView(DeleteView):
 #         context = super().get_context_data(**kwargs)
 #         context['form'] = ItemIdForm()
 #         return context
+
+class ItemMainView(TemplateView):
+    template_name = 'shoppinglist/main.html'
+    
+class LoginView(TemplateView):
+    template_name ='shoppinglist/login.html'
+
+class SignUpView(TemplateView):
+    template_name ='shoppinglist/signup.html'

@@ -7,8 +7,7 @@
 	<title>{% block title %}Ledger web-system{% endblock %}</title>
 	<!-- <link rel="stylesheet"href="{% static '/bootstrap/css/bootstrap.min.css'%}"> -->
 	<link rel="stylesheet"href="{% static '/css/base.css'%}">
-	<link rel="stylesheet"href="{% block css %}{% endblock %}">
-
+	{% block css %}{% endblock %}
 </head>
 <body>
 	<header>
@@ -27,7 +26,7 @@
                     <p class="title">{% block page_name %}メイン画面{% endblock%}</p>
                 </td>
                 <td>
-                    <button class="logout-botton" onclick="location.href='./login.html'">
+                    <button class="logout-botton" onclick=location.href="{% url 'shoppinglist:login' %}">
                         ログアウト
                     </button>
                 </td>
@@ -60,10 +59,10 @@
 				<tr>
 					<td></td>
 					<td></td>
-					<td><button class="information-botton" onclick="location.href='./document.html'">
+					<td><button class="information-botton" onclick=location.href="{% url 'shoppinglist:main' %}">
 						<img src="{%static "/images/common/info.png"%}" height="45" margin="2px" alt="ロゴの名前"></button>
 					</td>
-					<td><button class="home-botton" onclick="location.href='./document.html'">
+					<td><button class="home-botton" onclick=location.href="{% url 'shoppinglist:main' %}">
 						<img src="{%static "/images/common/home.png"%}" height="45" margin: 5px alt="ロゴの名前"></button>
 					</td>
 					<td></td>
