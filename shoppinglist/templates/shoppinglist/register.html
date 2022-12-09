@@ -14,16 +14,28 @@
      <table>
         <tr>
         <th><label>種別</label</th>
-        <td><input type="radio" value="領収書" name="領収書"><input type="radio" value="レシート" name="レシート"></td>
+        <td><input type="radio" value="領収書" id="inq1">
+         <label for="inq1">領収書</label>
+         <input type="radio" value="レシート" id="inq2">
+         <label for="inq2">レシート</label></td>
+        </tr>
+        <tr>
+        <th><label>日付</label</th>
+        <td><input type="date" placeholder="例）2000-11-11"></td>
+        </tr>
+        <tr>
+        <th><label>相手先</label</th>
+        <td><input type="text" placeholder="例）〇〇株式会社"></td>
+        </tr>
+        <tr>
+        <th><label>金額</label</th>
+        <td><input type="integer">円</td>
+        </tr>
+        <tr>
+        <th><label>備考</label</th>
+        <td><textarea name="comment"></textarea></td>
         </tr>
      </table>
-       <p>種別<input type="radio" value="領収書"> 領収書
-       <input type="radio" value="レシート"> レシート</p> 
-       <p>日付<input type="date" placeholder="例）2000-11-11"</p>
-       <p>相手先<input type="text" placeholder="例）〇〇株式会社"></p>  
-       <p>金額<input type="integer">円</p> 
-       <p>備考<textarea name="comment"></textarea></p> 
-     
      </form>
    </div>
 <ul>

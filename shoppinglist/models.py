@@ -5,8 +5,8 @@ from django.db import models
 #間に合わせでかなり雑に定義しています
 class User(models.Model):
     username = models.CharField(max_length=100)
-    userID = models.charField(max_length=100, primary_key=True)
-    password = models.charField(max_length=100)
+    userID = models.CharField(max_length=100, primary_key=True)
+    password = models.CharField(max_length=100)
     class Meta:
         db_table = 'ユーザ表'  #テーブル名："ユーザ表"
         
@@ -16,9 +16,9 @@ class User(models.Model):
 #verbose_nameで項目の名前を指定できる
 #日付の入力形式は未実装
 class Ledger(models.Model):
-    fileID = models.BigIntegerField(min_ength=10000, primary_key=True)
+    fileID = models.BigIntegerField(max_length=10000, primary_key=True)
     userID = models.ForeignKey(User, blank=True, null=True, verbose_name='user', on_delete=models.PROTECT)
-    attachedField = models.charField('属性', max_length=100)   #5パターンのいずれかに変更すべし
+    attachedField = models.CharField('属性', max_length=100)   #5パターンのいずれかに変更すべし
     
     IS_USED_CHOICES = (
         (False, '請求書'),
@@ -33,10 +33,10 @@ class Ledger(models.Model):
     consumptionTax = models.PositiveIntegerField('消費税', default=0)
     excludingTax = models.PositiveIntegerField('税抜金額', default=0)
     includingTax = models.PositiveIntegerField('税込金額', default=0)
-    note = models.TextField('備考', blank=True, null=True, max_length=1000, verbose_name='備考')
+#     note = models.TextField('備考', blank=True, null=True, max_length=1000, verbose_name='備考')
     registration_date = models.DateField('登録日時', blank=True,null=True)
     approval_date = models.DateField('承認日時', blank=True,null=True)
-    image_url = models.URLField('画像url', brank=True, null=True)
+    image_url = models.URLField('画像url', blank=True, null=True)
     
     
     class Meta:
@@ -46,9 +46,9 @@ class Ledger(models.Model):
         return self.fileID
 
 class RelatedDocument(models.Model):
-    relatedFileID = models.BigIntegerField(min_ength=10000, primary_key=True)
+    relatedFileID = models.BigIntegerField(max_length=10000, primary_key=True)
     userID = models.ForeignKey(User, blank=True, null=True, verbose_name='user', on_delete=models.PROTECT)
-    image_url = models.URLField('画像url', brank=True, null=True)
+    image_url = models.URLField('画像url', blank=True, null=True)
     
     class Meta:
         db_table = '関係書類表'  #テーブル名："ユーザ表"
