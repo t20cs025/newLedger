@@ -7,16 +7,22 @@
 {% csrf_token %}
 {{ form_id }}
 <input type="submit"/>
+<table>
+{{ form_id.as_table }}
+{{ form.as_table }}
+</table>
 </form>
-
    <div id="login">
      <form>
      <table>
         <tr>
-        <th><label>種別</label</th>
-        <td><input type="radio" value="領収書" id="inq1">
+        <th>
+        <label>種別</label</th>
+        <td>
+        <dd><legend>どちらかひとつを選択して下さい</dd>
+        <input type="checkbox" value="領収書" id="inq1" checked>
          <label for="inq1">領収書</label>
-         <input type="radio" value="レシート" id="inq2">
+         <input type="checkbox" value="レシート" id="inq2">
          <label for="inq2">レシート</label></td>
         </tr>
         <tr>
@@ -28,8 +34,16 @@
         <td><input type="text" placeholder="例）〇〇株式会社"></td>
         </tr>
         <tr>
-        <th><label>金額</label</th>
-        <td><input type="integer">円</td>
+        <th><label>消費税</label</th>
+        <td><input type="integer"></td>
+        </tr>
+        <tr>
+        <th><label>税抜金額</label</th>
+        <td><input type="integer"></td>
+        </tr>
+        <tr>
+        <th><label>税込金額</label</th>
+        <td><input type="integer"></td>
         </tr>
         <tr>
         <th><label>備考</label</th>
