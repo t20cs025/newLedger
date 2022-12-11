@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Aproval {% endblock %}
+{% block page_name %}承認操作{% endblock %}
+{% block main %}
+<link href="{% static '/css/aproval.css'%}" rel="stylesheet">
+<form action="{% url 'shoppinglist:add' %}" method="post">
+{% csrf_token %}
+
+<div id="tbl-bdr">
+    <table class="form">
+        <tr>
+            <td class="type">
+            種別
+            </td>
+            <td colspan="2">{{form.category}}</td>
+        </tr>
+        
+        <tr>
+            <td class="type">日付</td>
+            <td  colspan="2">{{form.input_date}}</td>
+        </tr>
+        
+        <tr>
+            <td class="type">相手先</td>
+            <td colspan="2">{{form.client}}</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="4" class="type">金額</td>
+            <td class="money_type">税率</td>
+            <td>{{form.consumptionTax_rate}}</td>
+        </tr>
+
+        <tr>
+            <td class="money_type">消費税</td>
+            <td>{{form.consumptionTax}}</td>
+        </tr>
+
+        <tr>
+            <td class="money_type">税抜き</td>
+            <td>{{form.excludingTax}}</td>
+        </tr>
+
+        <tr>
+            <td class="money_type">総額</td>
+            <td class="A">{{form.includingTax}}</td>
+        </tr>
+
+        <tr>
+            <td class="type">備考</td>
+            <td colspan="2">ECT</td>
+        </tr>
+        </table>
+</div>
+
+<table>
+    {{ form.as_table}}
+    <tr>
+        <td class = "name">
+            種類
+        </td>
+        <td>  
+            {{ form.category }}
+        </td>
+    </tr>
+    <tr>
+        <td class="name">
+            
+    </tr>
+</table>
+<input type="submit"/>
+</form>
+{% endblock %}

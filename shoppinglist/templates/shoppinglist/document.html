@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ja">
+        <title>Ledger web-system</title>
+        <meta name="description" content="ページの概要文を掲載します">
+        <meta name="viewport" content="device-width">
+        <link href="{% static '/css/document.css'%}" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+            <a href="./common.html" alt="メインへ戻る">
+                <img src="./images/common/LEDGER.png" width="50%" alt="ロゴの名前"> 
+            </a>                       
+            <h1 class="title">説明書類</h1>
+        </header>
+            <div class="header-inner">
+            </div>
+        <main class="main">
+
+            <h2 class="check">まずは書類をご確認ください。</h2>
+            <div class="information">
+                <div class="documents">
+                    <ul class="name">
+                        <li>
+                            <a href="https://www.google.co.jp/?hl=ja"rel="noopener noreferrer">システム概要書</a>
+                        </li>
+                        <li>システム仕様書</li>
+                        <li>操作マニュアル</li>
+                      </ul>
+                </div>
+                <img src="./images/document/information.png" width="50%" alt="マーク">
+                
+            </div>
+
+            
+        </main>
+
+        <footer class="footer">
+            <div class="upper">
+                <div class="upper-str-right"><h2>メインメニュー</h2></div>
+            </div>
+
+            <button class="home-botton" onclick="location.href='./common.html'">
+                <div class="home">
+                    <img src="./images/common/home.png" height="45" margin: 5px alt="ロゴの名前">
+                </div>
+        </footer>
+    </body>
+</html>

@@ -6,6 +6,8 @@ from django.shortcuts import get_object_or_404
 from .forms import ItemBuy, ItemIdForm, ItemForm
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from multiprocessing.sharedctypes import template
+from django.contrib.gis.db.backends.spatialite import client
 
 
 class ItemList(ListView):
@@ -109,8 +111,16 @@ class RegisterView(CreateView):
     model = Ledger
     fields = ('category','input_date','client','consumptionTax','excludingTax','includingTax')
     template_name = 'shoppinglist/register.html'
-    success_url = 'main/' 
-#     model = Item
-#     fields = ('name', 'item_url', 'count', 'buy_date', 'shop')
-#     template_name = 'shoppinglist/register.html'
-#     success_url = 'main/'    
+    success_url = 'main/'    
+
+class AprovalView(CreateView):
+    model = Ledger
+    fields = ('category','input_date','client','consumptionTax_rate','consumptionTax','excludingTax','includingTax')
+#     context['category'] = CategoryForm()
+    template_name = 'shoppinglist/aproval.html'
+    success_url = 'list/'
+    
+
+
+class DocumentView(TemplateView):
+    template_name ='shoppinglist/document.html'
