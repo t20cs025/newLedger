@@ -4,7 +4,7 @@ from .models import Ledger
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
-from .forms import ItemBuy, ItemIdForm, ItemForm,CategoryForm
+from .forms import ItemBuy, ItemIdForm, ItemForm
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from multiprocessing.sharedctypes import template
