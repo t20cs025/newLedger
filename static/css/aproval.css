@@ -1,8 +1,32 @@
+table.css
+
+#tbl-bdr table,#tbl-bdr td,#tbl-bdr th {
+    border-collapse: collapse;
+    border:1px solid #333;
+    }
+
 .form {
-    width:auto;
+    border-collapse: collapse;
+    /* background-color: aqua; */
+    width: auto;
+    border:3px solid #333;
+
 }
 
-.name{
-
-    color:aquamarine
+.type, .money_type{
+    background-color: #ebe9e9;
 }
+
+.type {
+    width: 100px;
+}
+.money_type {
+    width:100px;
+    
+}
+.A {
+    width: auto;
+}
+/* td.form {
+    border: 2px solid #000;
+} */

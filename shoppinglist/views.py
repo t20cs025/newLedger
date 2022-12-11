@@ -8,6 +8,7 @@ from .forms import ItemBuy, ItemIdForm, ItemForm
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from multiprocessing.sharedctypes import template
+from django.contrib.gis.db.backends.spatialite import client
 
 
 class ItemList(ListView):
@@ -115,7 +116,7 @@ class RegisterView(CreateView):
 
 class AprovalView(CreateView):
     model = Ledger
-    fields = ('category','input_date','consumptionTax_rate','consumptionTax','excludingTax',)
+    fields = ('category','input_date','client','consumptionTax_rate','consumptionTax','excludingTax','includingTax')
 #     context['category'] = CategoryForm()
     template_name = 'shoppinglist/aproval.html'
     success_url = 'list/'

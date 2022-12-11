@@ -3,6 +3,7 @@ from .models import Item,Ledger
 from cProfile import label
 from unicodedata import category
 
+
 class ItemBuy(forms.Form):
     status = (
         (0,'未購入'),
