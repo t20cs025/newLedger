@@ -1,12 +1,25 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %} Add {% endblock %}
-{% block page_name %}追加{% endblock %}
+{% block title %} Aproval {% endblock %}
+{% block page_name %}承認操作{% endblock %}
 {% block main %}
+<link href="{% static '/css/aproval.css'%}" rel="stylesheet">
 <form action="{% url 'shoppinglist:add' %}" method="post">
 {% csrf_token %}
-<table class=>
-{{ form.as_table }}
+<table class=form>
+    <tr>
+        <td class = "name">
+            種類
+        </td>
+        <td>  
+            {{ form.category }}
+        </td>
+    </tr>
+    <tr>
+        <td class="name">
+            
+    </tr>
 </table>
 <input type="submit"/>
 </form>

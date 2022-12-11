@@ -4,7 +4,7 @@ from .models import Ledger
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
-from .forms import ItemBuy, ItemIdForm, ItemForm
+from .forms import ItemBuy, ItemIdForm, ItemForm,CategoryForm
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from multiprocessing.sharedctypes import template
@@ -115,9 +115,11 @@ class RegisterView(CreateView):
 
 class AprovalView(CreateView):
     model = Ledger
-    fields = ('category')
+    fields = ('category','input_date','consumptionTax_rate','consumptionTax','excludingTax',)
+#     context['category'] = CategoryForm()
     template_name = 'shoppinglist/aproval.html'
     success_url = 'list/'
+    
 
 
 class DocumentView(TemplateView):
