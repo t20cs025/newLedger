@@ -18,7 +18,7 @@
                     </th>
                 </tr>
                 <td>
-                    <a href="./common.html" alt="メインへ戻る">
+                    <a href="{% url 'shoppinglist:main' %}" alt="メインへ戻る">
                         <img src="{% static "/images/common/LEDGER.png"%}" width="90%" alt="ロゴの名前"> 
                     </a> 
                 </td>
@@ -59,7 +59,7 @@
 				<tr>
 					<td></td>
 					<td></td>
-					<td><button class="information-botton" onclick=location.href="{% url 'shoppinglist:main' %}">
+					<td><button class="information-botton" onclick=location.href="{% url 'shoppinglist:document' %}">
 						<img src="{%static "/images/common/info.png"%}" height="45" margin="2px" alt="ロゴの名前"></button>
 					</td>
 					<td><button class="home-botton" onclick=location.href="{% url 'shoppinglist:main' %}">

@@ -1,11 +1,13 @@
 from django.views.generic import ListView
 from .models import Item
+from .models import Ledger
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from .forms import ItemBuy, ItemIdForm, ItemForm
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from multiprocessing.sharedctypes import template
 
 
 class ItemList(ListView):
@@ -110,3 +112,13 @@ class RegisterView(CreateView):
     fields = ('name', 'item_url', 'count', 'buy_date', 'shop')
     template_name = 'shoppinglist/register.html'
     success_url = 'main/'    
+
+class AprovalView(CreateView):
+    model = Ledger
+    fields = ('category')
+    template_name = 'shoppinglist/aproval.html'
+    success_url = 'list/'
+
+
+class DocumentView(TemplateView):
+    template_name ='shoppinglist/document.html'

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Item
+from .models import Item,Ledger
 
 class ItemBuy(forms.Form):
     status = (
@@ -16,3 +16,8 @@ class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ['name', 'item_url', 'count', 'buy_date', 'shop']
+
+class LedgerForm(forms.ModelForm):
+    class Meta:
+        model = Ledger
+        fields = ['category']
