@@ -1,8 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %} 個別リスト {% endblock %}
+{% block title %} Register {% endblock %}
+{% block page_name %}register{% endblock %}
 
 {% block main %}
+<link href="{% static '/css/register.css'%}" rel="stylesheet">
 <form action="{% url 'shoppinglist:register' %}" method="post">
 {% csrf_token %}
 {{ form_id }}
@@ -12,9 +15,9 @@
 {{ form.as_table }}
 </table>
 </form>
-   <div id="login">
+   <div div id="tbl-bdr">
      <form>
-     <table>
+     <table class = "form">
         <tr>
         <th>
         <label>種別</label</th>
@@ -48,6 +51,45 @@
         <tr>
         <th><label>備考</label</th>
         <td><textarea name="comment"></textarea></td>
+        </tr>
+     </table>
+     </form>
+   </div>
+   
+   <div div id="tbl-bdr">
+     <form>
+     <table class = "form">
+        <tr>
+        <td class = "shubetu">種別</td>
+        
+        <td colspan="2"><dd><legend>どちらかひとつを選択して下さい</dd>{{form.category}}</td>
+        </tr>
+        <tr>
+        <td class = "date">日付</td>
+        <td  colspan="2">{{form.input_date}}</td>
+        </tr>
+        <tr>
+        <td class = "client">相手先</td>
+        <td colspan="2">{{form.client}}</td>
+        </tr>
+        <tr>
+            <td rowspan="4" class="money">金額</td>   
+        </tr>
+        <tr>
+        <td class = "comsum">消費税</td>
+        <td>{{form.consumptionTax}}</td>
+        </tr>
+        <tr>
+        <td class = "exinclude">税抜金額</td>
+        <td>{{form.excludingTax}}</td>
+        </tr>
+        <tr>
+        <td class = "include">税込金額</td>
+        <td class="A">{{form.includingTax}}</td>
+        </tr>
+        <tr>
+        <td class = "text">備考</td>
+        <td colspan="2"><textarea name="comment"></textarea></td>
         </tr>
      </table>
      </form>
