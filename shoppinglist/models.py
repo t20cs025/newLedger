@@ -16,7 +16,7 @@ class User(models.Model):
 #verbose_nameで項目の名前を指定できる
 #日付の入力形式は未実装
 class Ledger(models.Model):
-    fileID = models.BigIntegerField(max_length=10000, primary_key=True)
+    fileID = models.BigIntegerField(primary_key=True)
     userID = models.ForeignKey(User, blank=True, null=True, verbose_name='user', on_delete=models.PROTECT)
     attachedField = models.CharField('属性', max_length=100)   #5パターンのいずれかに変更すべし
     
@@ -42,19 +42,19 @@ class Ledger(models.Model):
     class Meta:
         db_table = '帳簿表'
     
-    def __str__(self):
-        return self.fileID
+#     def __str__(self):
+#         return self.fileID
 
 class RelatedDocument(models.Model):
-    relatedFileID = models.BigIntegerField(max_length=10000, primary_key=True)
+    relatedFileID = models.BigIntegerField( primary_key=True)
     userID = models.ForeignKey(User, blank=True, null=True, verbose_name='user', on_delete=models.PROTECT)
     image_url = models.URLField('画像url', blank=True, null=True)
     
     class Meta:
         db_table = '関係書類表'  #テーブル名："ユーザ表"
         
-    def __str__(self):
-        return self.relatedFileID
+#     def __str__(self):
+#         return self.relatedFileID
 
 
 class Shop(models.Model):
