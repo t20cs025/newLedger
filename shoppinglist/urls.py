@@ -15,6 +15,8 @@ urlpatterns = [
     path('login',LoginView.as_view(),name='login'),
     path('signup',SignUpView.as_view(),name='signup'),
     path('register',RegisterView.as_view(),name='register'),
+#     path('register11/',TodoCreate.as_view(),name='register11'),
+    
     path('aproval',AprovalView.as_view(),name='aproval'),
     path('document',DocumentView.as_view(),name='document'),
     ]

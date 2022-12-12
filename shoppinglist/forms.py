@@ -20,3 +20,11 @@ class ItemForm(forms.ModelForm):
         model = Item
         fields = ['name', 'item_url', 'count', 'buy_date', 'shop']
 
+# class DateInput(forms.DateInput):
+#     input_type = 'date'
+# 
+# class TodoForm(forms.ModelForm):
+#     class Meta:
+#         model = Ledger
+#         fields = ['category','input_date','client','consumptionTax','excludingTax','includingTax']
+#         wudgets = {'duedate': DateInput(),}

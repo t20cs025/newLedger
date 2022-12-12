@@ -113,6 +113,15 @@ class RegisterView(CreateView):
     template_name = 'shoppinglist/register.html'
     success_url = 'list/'    
 
+# class TodoCreate(CreateView):
+#     model = Ledger
+#     template_name = 'shoppinglist/register.html'
+#     form_class = TodoForm
+#     success_url = 'list/'    
+
+
+
+
 class AprovalView(CreateView):
     model = Ledger
     fields = ('category','input_date','client','consumptionTax_rate','consumptionTax','excludingTax','includingTax')
