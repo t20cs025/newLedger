@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %} 個別リスト{% endblock%}
-
+<link href="{% static '/css/ledger_list.css'%}" rel="stylesheet">
 {% block main %}
 <!-- <div class="func">
 	<form action="{% url 'shoppinglist:list' %}" method="post">

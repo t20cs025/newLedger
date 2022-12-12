@@ -122,6 +122,7 @@ class ApprovalView(CreateView):
     
 class LedgerList(ListView):
     model = Ledger
-
+    template_name = 'shoppinglist/ledger.html'
+    
 class DocumentView(TemplateView):
     template_name ='shoppinglist/document.html'
