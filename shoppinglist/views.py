@@ -113,14 +113,15 @@ class RegisterView(CreateView):
     template_name = 'shoppinglist/register.html'
     success_url = 'list/'    
 
-class AprovalView(CreateView):
+class ApprovalView(CreateView):
     model = Ledger
     fields = ('category','input_date','client','consumptionTax_rate','consumptionTax','excludingTax','includingTax')
 #     context['category'] = CategoryForm()
-    template_name = 'shoppinglist/aproval.html'
+    template_name = 'shoppinglist/approval.html'
     success_url = 'list/'
     
-
+class LedgerList(ListView):
+    model = Ledger
 
 class DocumentView(TemplateView):
     template_name ='shoppinglist/document.html'

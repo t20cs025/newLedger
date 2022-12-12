@@ -1,10 +1,12 @@
 from django.urls import path
 from .views import ItemList, ItemEditView,ItemShowView,ItemDeleteView,ItemAddView
-from .views import ItemMainView,LoginView,SignUpView,RegisterView,DocumentView,AprovalView
+from .views import ItemMainView,LoginView,SignUpView,RegisterView,DocumentView,ApprovalView
+from .views import LedgerList
 
 app_name = 'shoppinglist'
 urlpatterns = [
-    path('list/',ItemList.as_view(),name='list'),
+    path('list/',LedgerList.as_view(),name='list'),
+#     path('list/',ItemList.as_view(),name='list'),
     path('add', ItemAddView.as_view(), name='add'),
     
     path('edit/<int:pk>', ItemEditView.as_view(),name='edit'),
@@ -15,6 +17,6 @@ urlpatterns = [
     path('login',LoginView.as_view(),name='login'),
     path('signup',SignUpView.as_view(),name='signup'),
     path('register',RegisterView.as_view(),name='register'),
-    path('aproval',AprovalView.as_view(),name='aproval'),
+    path('approval',ApprovalView.as_view(),name='approval'),
     path('document',DocumentView.as_view(),name='document'),
     ]
