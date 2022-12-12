@@ -1,6 +1,5 @@
 from django.views.generic import ListView
-from .models import Item
-from .models import Ledger
+from .models import Item,Ledger
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
@@ -109,10 +108,10 @@ class SignUpView(TemplateView):
     template_name ='shoppinglist/signup.html'
     
 class RegisterView(CreateView):
-    model = Item
-    fields = ('name', 'item_url', 'count', 'buy_date', 'shop')
+    model = Ledger
+    fields = ('category','input_date','client','consumptionTax','excludingTax','includingTax')
     template_name = 'shoppinglist/register.html'
-    success_url = 'main/'    
+    success_url = 'list/'    
 
 class AprovalView(CreateView):
     model = Ledger
