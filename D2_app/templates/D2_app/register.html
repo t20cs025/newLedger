@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Register {% endblock %}
+{% block page_name %}register{% endblock %}
+
+{% block main %}
+<link href="{% static '/css/register.css'%}" rel="stylesheet">
+<form action="{% url 'D2_app:register' %}" method="post">
+{% csrf_token %}
+{{ form_id }}
+<input type="submit"/>
+</form>
+   <div div id="tbl-bdr">
+     <form>
+     <table class = "form">
+        <tr>
+        <th>
+        <label>種別</label</th>
+        <td>
+        <dd><legend>どちらかひとつを選択して下さい</dd>
+        <input type="checkbox" value="領収書" id="inq1" checked>
+         <label for="inq1">領収書</label>
+         <input type="checkbox" value="レシート" id="inq2">
+         <label for="inq2">レシート</label></td>
+        </tr>
+        <tr>
+        <th><label>日付</label</th>
+        <td><input type="date" placeholder="例）2000-11-11"></td>
+        </tr>
+        <tr>
+        <th><label>相手先</label</th>
+        <td><input type="text" placeholder="例）〇〇株式会社"></td>
+        </tr>
+        <tr>
+        <th><label>消費税</label</th>
+        <td><input type="integer"></td>
+        </tr>
+        <tr>
+        <th><label>税抜金額</label</th>
+        <td><input type="integer"></td>
+        </tr>
+        <tr>
+        <th><label>税込金額</label</th>
+        <td><input type="integer"></td>
+        </tr>
+        <tr>
+        <th><label>備考</label</th>
+        <td><textarea name="comment"></textarea></td>
+        </tr>
+     </table>
+     </form>
+   </div>
+   
+   <div div id="tbl-bdr">
+     <form>
+     <table class = "form">
+        <tr>
+        <td class = "shubetu">種別</td>
+        
+        <td colspan="2"><dd><legend>どちらかひとつを選択して下さい</dd>{{form.category}}</td>
+        </tr>
+        <tr>
+        <td class = "date">日付</td>
+        <td  colspan="2">{{form.input_date}}</td>
+        </tr>
+        <tr>
+        <td class = "client">相手先</td>
+        <td colspan="2">{{form.client}}</td>
+        </tr>
+        <tr>
+            <td rowspan="4" class="money">金額</td>   
+        </tr>
+        <tr>
+        <td class = "comsum">消費税</td>
+        <td>{{form.consumptionTax}}</td>
+        </tr>
+        <tr>
+        <td class = "exinclude">税抜金額</td>
+        <td>{{form.excludingTax}}</td>
+        </tr>
+        <tr>
+        <td class = "include">税込金額</td>
+        <td class="A">{{form.includingTax}}</td>
+        </tr>
+        <tr>
+        <td class = "text">備考</td>
+        <td colspan="2"><textarea name="comment"></textarea></td>
+        </tr>
+     </table>
+     </form>
+   </div>
+<ul>
+<li><a href="{% url 'D2_app:main' %}"><input type="button" value="登録"></a></li>
+<li><a href="{% url 'D2_app:show' %}"><input type="button" value="キャンセル"></a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,53 @@
+tbl-bdr table,#tbl-bdr td,#tbl-bdr th {
+    border-collapse: collapse;
+    border:1px solid #333;
+    }
+
+
+.shubetu{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+.date{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+
+.client{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+
+.money{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+
+.comsum{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+
+.exinclude{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+
+.include{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+
+.text{
+    background-color: #ebe9e9;
+    width: 100px;
+}
+
+
+.form {
+    border-collapse: collapse;
+    /* background-color: aqua; */
+    width: auto;
+    border:3px solid #333;
+
+}

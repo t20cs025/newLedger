@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} LEDGER {% endblock %}
+{% block page_name %}承認操作{% endblock %}
+
+{% block main %}
+
+<div class="span"></div>
+<div id="tbl-bdr">
+	<table class="table">
+		<thead class="table-dark">
+			<tr>
+				<!-- <th class="adjust"></th> -->
+				<th>ID</th>
+				<th>状態</th>
+				<th>種類</th>
+				<th>日付</th>
+				<th>相手先</th>
+				<th>金額</th>
+				<th>登録日</th>
+				<!-- <th>表示</th> -->
+				<th></th>
+				<!-- <th></th> -->
+				</tr>
+			</thead>
+			
+	<tbody class="body">
+	{% for ledger in object_list %}
+		<tr>
+			<td>{{ ledger.pk }}</td>
+			<td>{{ ledger.attachedField }}</td>
+			<td>{% if ledger.category == False %} 請求書 {% endif %}{% if ledger.category == True %} 領収書 {% endif %}</td>
+			<td>{{ ledger.input_date }}</td>
+			<td>{{ ledger.client }}</td>
+			<td>{{ ledger.includingTax }}円</td>
+			<td>{{ ledger.registration_date }}</td>
+
+		</tr>
+	{% endfor%}
+	</tbody>
+	</table>
+</div>
+
+{% endblock%}

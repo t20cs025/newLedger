@@ -1,0 +1,64 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="ja">
+        <title>Ledger web-system</title>
+        <meta name="description" content="ページの概要文を掲載します">
+        <meta name="viewport" content="device-width">
+        <!-- <link href="./css/signup.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="{% static "/css/password.css"%}">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" 
+    </head>
+
+    <body>
+        <div id="login">
+
+            <div class="header">
+                <div class="back">
+                    <img src="{% static "/images/common/LEDGER.png"%}" height="60px" alt="ロゴの名前">
+                </div>
+                <div class="adjust"></div>
+            </div>
+            <form name="form-login">
+                
+                <div class="user-str">
+                    ユーザID(4-7文字)
+                </div>
+                <input type="text" id="user" required placeholder="UserID" pattern="^[a-zA-Z0-9]+$" maxlength="7" minlength="4">                
+                
+            <div class="user-str">
+                パスワード(8-12文字)
+            </div>    
+              <input type="password" id="pass" required placeholder="Password" pattern="^[[a-zA-Z0-9]+%+_]+$"maxlength="12" minlength="8">
+              <div class="user-str">
+                パスワード(確認用)
+            </div>    
+              <input type="password" id="check-pass" required placeholder="Password" maxlength="12" minlength="8">
+
+              <div class="acount">
+                <input type="radio" name="q1" value="一般" style="transform:scale(1.5);"> 一般
+                <input type="radio" name="q1" value="承認者" style="transform:scale(1.5);"> 承認者  
+              </div>
+             
+              <div class="user-str">
+                メールアドレス
+            </div>    
+              <input type="email" id="mail"  required placeholder="メールアドレス">
+
+                        <div class="login-botton">
+                            <input type="submit" value="登録" >
+                        </div>
+
+              
+                </form>
+
+        </div>
+        <button class="fake" onclick=location.href="{% url 'D2_app:main' %}">fake</button>
+ 
+                
+            </body>
+
+    </html>
+
+

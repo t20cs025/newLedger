@@ -1,0 +1,67 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="ja">
+        <title>Ledger web-system</title>
+        <meta name="description" content="ページの概要文を掲載します">
+        <meta name="viewport" content="device-width">
+        <link rel="stylesheet" href="{% static '/css/login.css'%}">
+        <!-- <link rel="stylesheet" href="{%static "/css/password.css" %}"> -->
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" 
+    </head>
+
+    <body>
+        <div id="login">
+
+            <div class="header">
+                <div class="back">
+                    <img src="{% static "/images/common/LEDGER.png"%}" height="60px" alt="ロゴの名前">
+                </div>
+                <div class="adjust"></div>
+            </div>
+            <form name="form-login">
+                
+                <div class="user-str">
+                    ユーザID
+                </div>
+                <input type="text" id="user" placeholder="UserID">                
+                
+            <div class="user-str">
+                パスワード
+            </div>    
+              <input type="password" id="pass" placeholder="Password">
+              <a href="https://forms.gle/pP7BeJRgqGqNABth9"rel="noopener noreferrer">パスワードを忘れた</a>
+            
+              <table>
+                <tr>
+                    <td >
+                        <div class="acount">
+                            <input type="radio" name="q1" value="一般" style="transform:scale(1.5);"> 一般
+                          <input type="radio" name="q1" value="承認者" style="transform:scale(1.5);"> 承認者
+                        </div>
+                    </td>
+                    <td class="l">
+                        <div class="login-botton">
+                            <input type="submit" value="ログイン" >
+                        </div>
+                    </td>
+
+                </tr>
+                
+              </table>
+              
+                </form>
+
+        </div>
+        <div class="signup">
+            <a href="{% url 'D2_app:signup' %}" >サインアップはこちらから</a>
+        </div>
+        <button class="fake" onclick=location.href="{% url 'D2_app:main' %}">fake</button>
+ 
+                
+            </body>
+
+    </html>
+
+

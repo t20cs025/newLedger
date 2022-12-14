@@ -1,0 +1,40 @@
+.span {
+    height: 100px;
+}
+
+.adjust {
+    background-color: #ebe9e9;
+}
+#tbl-bdr table,#tbl-bdr td,#tbl-bdr th {
+    border-collapse: collapse;
+    border:1px solid #333;
+    }
+
+.table {
+    width:80vw;
+    margin: auto;
+    border-collapse: collapse;
+    border:1px solid #333;
+}
+.table-dark {
+    border-collapse: collapse;
+    border:1px solid #333;
+    background-color: #ebe9e9;
+    color: black;
+    height: 40px;
+}
+
+.body {
+    border-collapse: collapse;
+    border:1px solid #333;
+    background-color: white;
+}
+
+.detail {
+    width: 120px;
+    font-size: large;
+    background-color: #b2adab;
+    color:black;
+    font-weight: bold;
+    border-radius: 5px;
+}
