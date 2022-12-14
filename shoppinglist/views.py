@@ -8,23 +8,13 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from multiprocessing.sharedctypes import template
 from django.contrib.gis.db.backends.spatialite import client
+from django.urls.base import reverse_lazy
 
 
 class ItemList(ListView):
     model = Item
+    template_name='shoppinglist/item_list.html'
     
-    def post(self,request, *args, **kwargs):
-        item_id = self.request.POST.get('item_id')
-        item = get_object_or_404(Item, pk=item_id)
-        item_status = self.request.POST.get('item_status')
-        item.buy = item_status
-        item.save()
-        return HttpResponseRedirect(reverse('shoppinglist:list'))
-        
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = ItemBuy()
-        return context
 class ItemEditView(UpdateView):
     model = Item
     fields = ('name', 'item_url', 'count', 'buy_date', 'shop')
@@ -100,6 +90,7 @@ class ItemDeleteView(DeleteView):
 
 class ItemMainView(TemplateView):
     template_name = 'shoppinglist/main.html'
+    success_url = reverse_lazy('list')
     
 class LoginView(TemplateView):
     template_name ='shoppinglist/login.html'
@@ -113,13 +104,13 @@ class RegisterView(CreateView):
     template_name = 'shoppinglist/register.html'
     success_url = 'list/'    
 
-class ApprovalView(CreateView):
+class ApprovalView(UpdateView):
     model = Ledger
     fields = ('category','input_date','client','consumptionTax_rate','consumptionTax','excludingTax','includingTax')
 #     context['category'] = CategoryForm()
     template_name = 'shoppinglist/approval.html'
-    success_url = 'list/'
-    
+    success_url = reverse_lazy('ledger_list')
+#     success_url = 'list/'    
 class LedgerList(ListView):
     model = Ledger
     template_name = 'shoppinglist/ledger.html'

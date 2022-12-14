@@ -18,6 +18,6 @@ urlpatterns = [
     path('signup',SignUpView.as_view(),name='signup'),
     path('register',RegisterView.as_view(),name='register'),
     path('ledger_list',LedgerList.as_view(),name='ledger_list'),
-    path('approval',ApprovalView.as_view(),name='approval'),
+    path('approval/<int:pk>',ApprovalView.as_view(),name='approval'),
     path('document',DocumentView.as_view(),name='document'),
     ]

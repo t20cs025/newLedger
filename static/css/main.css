@@ -87,11 +87,15 @@ header {
 .span {
 width :5%;
 }
+.up {
+width: auto;
 
+}
 .subtitle {
     margin-top: 5px;
     font-weight: bold;
 }
+
 .images {
     background-color: #0a458a;
     margin-top: 0px;
